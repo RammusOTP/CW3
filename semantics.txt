@@ -1,0 +1,53 @@
+Scott Damoo - 
+Maximo Hardaker - 
+Emmanuel Phillips - 230355585 - ec23279@qmul.ac.uk
+
+Semantics of Eurostar2030 Scenario.
+
+Train-Trip
+-> Relationship: A train is used to complete a trip
+-> Cardinality: N : M
+-> Explanation: Each train can be assigned to multiple trips, and each trip can use multiple types of trains
+-> Implementation: FK Train(TripID) references PK Trip(TripID)
+
+Route-Trip
+-> Relationship: A route must be assigned for each trip
+-> Cardinality: N : M
+-> Explanation: Each route can be assigned to multiple trips, and each trip can be made multiple times
+-> Implementation: FK Trip(RouteID) references PK Route(RouteID)
+
+Station-IntermediateStop-Route
+-> Relationship: Stations must be part of routes, there are intermediate stops on the way
+-> Cardinality: N : M
+-> Explanation: A station can be on many routes, and a route can contain multiple stations
+-> Implementation: FK IntermediateStop(StationID) references Station(StationID)
+                   FK IntermediateStop(RouteID) references Route(RouteID)
+
+Employee-CrewAssignment
+-> Relationship: Employees must be assigned to crews
+-> Cardinality: N : M
+-> Explanation: An employee can be assigned to multiple trips, each crew assignment involves many employees
+-> Implementation: FK CrewAssignment(EmployeeID) references Employee(EmployeeID)
+
+Trip-Ticket
+-> Relationship: Tickets are sold for a trip
+-> Cardinality: 1 : N
+-> Explanation: Each ticket corresponds to one specific trip, but each trip can have many tickets corresponding to it
+-> Implementation: FK Ticket(TripID) references Trip(TripID)
+
+Passenger-Ticket
+-> Relationship: Passengers purchase tickets for trips
+-> Cardinality: 1 : N
+-> Explanation: A passenger can buy multiple tickets, but tickets are linked to only one passenger
+-> Implementation: FK Ticket(PassengerID) references Passenger(PassengerID)
+
+
+----------------------------------------
+Use this for default format of semantics
+
+Relationship
+-> Relationship:
+-> Cardinality:
+-> Explanation:
+-> Implementation:
+
