@@ -109,12 +109,12 @@ CREATE TABLE Ticket (
 -- Insert data into Train table
 INSERT INTO Train (TrainNumber, Type, Status, Capacity, YearIntroduced) VALUES
 ('E01', 'Express', 'Operational', 200, 2020),
-('E02', 'Freight', 'Not Operational', 150, 2018),
+('E02', 'Freight', 'Under Maintenance', 150, 2018),
 ('E03', 'High-Speed', 'Operational', 300, 2022),
 ('E04', 'Express', 'Operational', 250, 2021),
 ('E05', 'Freight', 'Retired', 100, 2015),
 ('E06', 'High-Speed', 'Operational', 350, 2023),
-('E07', 'Freight', 'Not Operational', 200, 2019),
+('E07', 'Freight', 'Under Maintenance', 200, 2019),
 ('E08', 'Express', 'Operational', 180, 2020),
 ('E09', 'High-Speed', 'Retired', 300, 2017),
 ('E10', 'Freight', 'Operational', 150, 2022);
@@ -132,7 +132,7 @@ INSERT INTO Station (Name, Country, City, Type) VALUES
 ('Rome', 'Italy', 'Rome', 'Intermediate'),
 ('Madrid', 'Spain', 'Madrid', 'End');
 
--- Insert data into Route table
+-- Insert data into Route tableS
 -- Insert data into Trip table
 -- Insert data into Employee table
 -- Insert data into CrewAssignment table
