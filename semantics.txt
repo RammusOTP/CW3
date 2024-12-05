@@ -21,6 +21,7 @@ Station-IntermediateStop-Route
 -> Cardinality: N : M
 -> Explanation: A station can be on many routes, and a route can contain multiple stations
 -> Implementation: FK IntermediateStop(StationID) references Station(StationID)
+                   AND
                    FK IntermediateStop(RouteID) references Route(RouteID)
 
 Employee-CrewAssignment
