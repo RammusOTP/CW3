@@ -210,7 +210,58 @@ INSERT INTO Ticket (PassengerID, TripID, TicketType, Price) VALUES
 
 --------------------------------------------------------------------------------------------------------------------
 
--- Create 2 basic queries
--- Create 3 intermediate queries
--- Create 3 advanced queries
+-------------------- TWO BASIC QUERIES --------------------
 
+-- LIST ALL TRAINS THAT ARE CURRENTLY OPERATIONAL
+SELECT TrainNumber, Type, Capacity, YearIntroduced
+FROM Train
+WHERE Status = 'Operational';
+
+-- LIST NAMES OF ALL STATIONS THAT ARE INTERMEDIATE STATIONS
+SELECT Name, City
+FROM Station
+WHERE Type = 'Intermediate';
+
+-------------------- THREE INTERMEDIATE QUERIES --------------------
+
+-- FIND THE TOTAL NUMBER OF PASSENGERS ON EACH TRIP
+SELECT TripID, SUM(PassengerCount) AS TotalPassengers
+FROM Trip
+GROUP BY TripID;
+
+--FIND ALL THE TICKET PRICES SOLD FOR LONDON, AND THE PASSENGER TYPE AND TICKET PRICE
+SELECT t.TripID, p.Name AS PassengerName, p.PassengerType, ti.TicketType, ti.Price
+FROM Ticket ti
+JOIN Trip t ON ti.TripID = t.TripID
+JOIN Passenger p ON ti.PassengerID = p.PassengerID
+WHERE t.RouteID = 1; 
+
+--LIST ALL CREW ASSIGNMENTS FOR LONDON, AND EMPLOYEE NAMES AND THEIR ROLES
+SELECT ca.TripID, e.Name AS EmployeeName, ca.Role
+FROM CrewAssignment ca
+JOIN Employee e ON ca.EmployeeID = e.EmployeeID
+WHERE ca.TripID = 1;  
+
+
+-------------------- THREE ADVANCED QUERIES --------------------
+
+--FIND THE AVERAGE DISTANCE AND JOURNEY TIME FOR ALL TRAIN ROUTES STARTING IN LONDON
+SELECT AVG(Distance) AS AverageDistance, AVG(TIMESTAMPDIFF(MINUTE, '00:00:00', JourneyTime)) AS AverageJourneyTime
+FROM Route r
+JOIN Station s ON r.StartStationID = s.StationID
+WHERE s.Name = 'London';
+
+--FIND THE TOTAL REVENUE FOR EACH TRIP USING TICKET PRICES
+SELECT t.TripID, SUM(ti.Price) AS TotalRevenue
+FROM Ticket ti
+JOIN Trip t ON ti.TripID = t.TripID
+GROUP BY t.TripID;
+
+
+--FIND THE MOST POPULAR TRAIN TYPE USING PASSENGER COUNT
+SELECT tr.Type, SUM(t.PassengerCount) AS TotalPassengers
+FROM Train tr
+JOIN Trip t ON tr.TrainID = t.TrainID
+GROUP BY tr.Type
+ORDER BY TotalPassengers DESC
+LIMIT 1;
