@@ -45,16 +45,6 @@ CREATE TABLE Route (
     FOREIGN KEY (EndStationID) REFERENCES Station(StationID)
 );
 
--- Create IntermediateStop table
-CREATE TABLE IntermediateStop (
-    StopID INT PRIMARY KEY AUTO_INCREMENT,
-    RouteID INT NOT NULL,
-    StationID INT NOT NULL,
-    StopOrder INT NOT NULL,
-    FOREIGN KEY (RouteID) REFERENCES Route(RouteID),
-    FOREIGN KEY (StationID) REFERENCES Station(StationID)
-);
-
 -- Create Trip table
 CREATE TABLE Trip (
     TripID INT PRIMARY KEY AUTO_INCREMENT,
