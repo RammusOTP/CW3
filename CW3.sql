@@ -207,3 +207,10 @@ INSERT INTO Ticket (PassengerID, TripID, TicketType, Price) VALUES
 (6, 8, 'Standard', 35.00),
 (7, 9, 'First Class', 95.00),
 (8, 9, 'Standard', 65.00);
+
+--------------------------------------------------------------------------------------------------------------------
+
+-- Create 2 basic queries
+-- Create 3 intermediate queries
+-- Create 3 advanced queries
+
