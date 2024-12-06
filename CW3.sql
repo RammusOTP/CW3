@@ -174,16 +174,16 @@ INSERT INTO Employee (Name, Role, HireDate, Status) VALUES
 
 -- Insert data into CrewAssignment table
 INSERT INTO CrewAssignment (TripID, EmployeeID, Role) VALUES
-('T01', 'E001', 'Train Driver'), 
-('T01', 'E002', 'Conductor'), 
-('T03', 'E001', 'Train Driver'), 
-('T03', 'E002', 'Conductor'), 
-('T04', 'E001', 'Train Driver'), 
-('T04', 'E002', 'Conductor'), 
-('T05', 'E001', 'Train Driver'), 
-('T05', 'E002', 'Conductor'), 
-('T06', 'E006', 'Train Driver'), 
-('T06', 'E007', 'Conductor');
+('01', 'E001', 'Train Driver'), 
+('01', 'E002', 'Conductor'), 
+('03', 'E001', 'Train Driver'), 
+('03', 'E002', 'Conductor'), 
+('04', 'E001', 'Train Driver'), 
+('04', 'E002', 'Conductor'), 
+('05', 'E001', 'Train Driver'), 
+('05', 'E002', 'Conductor'), 
+('06', 'E006', 'Train Driver'), 
+('06', 'E007', 'Conductor');
 
 -- Insert data into Passenger table
 INSERT INTO Passenger (Name) VALUES 
