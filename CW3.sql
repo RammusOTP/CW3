@@ -9,7 +9,7 @@ Specified location to run script: MySQL
 */
 
 -- Create Database
-CREATE DATABASE Eurostar2030;
+CREATE DATABASE IF NOT EXISTS Eurostar2030;
 
 -- Select Database
 USE Eurostar2030;
@@ -133,7 +133,7 @@ INSERT INTO Station (Name, Country, City, Type) VALUES
 ('Rome', 'Italy', 'Rome', 'Intermediate'),
 ('Madrid', 'Spain', 'Madrid', 'End');
 
--- Insert data into Route tableS
+-- Insert data into Route table
 INSERT INTO Route (StartStationID, EndStationID, Distance, JourneyTime, Status) VALUES
 (1, 2, 450, '05:00:00', 'Operational'), 
 (1, 3, 320, '03:30:00', 'Operational'), 
@@ -170,8 +170,6 @@ INSERT INTO Employee (Name, Role, HireDate, Status) VALUES
 ('Sophia King', 'Engineer', '2022-02-15', 'Active'), 
 ('Mason Clark', 'Station Attendant', '2020-07-25', 'Active'), 
 ('Olivia Adams', 'Customer Service Representative', '2021-06-20', 'Active');
-
-
 
 -- Insert data into CrewAssignment table
 INSERT INTO CrewAssignment (TripID, EmployeeID, Role) VALUES
@@ -219,10 +217,3 @@ INSERT INTO Ticket (PassengerID, TripID, TicketType, Price) VALUES
 (6, 8, 'Standard', 35.00),
 (7, 9, 'First Class', 95.00),
 (8, 9, 'Standard', 65.00);
-
---------------------------------------------------------------------------------------------------------------------
-
--- Create 2 simple queries
--- Create 3 intermediate queries
--- Create 3 advanced queries
-
