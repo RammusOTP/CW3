@@ -1,5 +1,6 @@
 /*
-Scott Damoo - 
+Scott Damoo - 230088627 - ec23076@qmul.ac.uk
+Nefertiti Gansallo - 
 Maximo Hardaker - 
 Emmanuel Phillips - 230355585 - ec23279@qmul.ac.uk
 
@@ -133,14 +134,85 @@ INSERT INTO Station (Name, Country, City, Type) VALUES
 ('Madrid', 'Spain', 'Madrid', 'End');
 
 -- Insert data into Route tableS
+INSERT INTO Route (StartStation, EndStation, Distance, JourneyTime, Status) VALUES ('London', 'Paris', 450, 5, 'Operational'), 
+('London', 'Brussels', 320, 3.5, 'Operational'), 
+('Paris', 'Brussels', 300, 3, 'Operational'), 
+('Brussels', 'Amsterdam', 200, 2.5, 'Operational'), 
+('Amsterdam', 'Cologne', 220, 3, 'Operational'), 
+('Cologne', 'Berlin', 300, 4, 'Operational'), 
+('Berlin', 'Geneva', 700, 8, 'Operational'), 
+('Zurich', 'Geneva', 280, 2.5, 'Operational'), 
+('Paris', 'Zurich', 550, 6, 'Operational'), 
+('London', 'Zurich', 700, 7, 'Operational');
+
 -- Insert data into Trip table
+INSERT INTO Trip (Date, DepartureTime, ArrivalTime, PassengerCount) VALUES ('2024-12-06', '08:00:00', '13:00:00', 150), 
+('2024-12-06', '09:00:00', '12:30:00', 120), 
+('2024-12-06', '10:00:00', '13:00:00', 200), 
+('2024-12-06', '07:30:00', '10:00:00', 80), 
+('2024-12-06', '11:00:00', '17:00:00', 250), 
+('2024-12-06', '12:00:00', '16:00:00', 100), 
+('2024-12-06', '13:00:00', '21:00:00', 180), 
+('2024-12-06', '14:00:00', '16:30:00', 90), 
+('2024-12-06', '15:00:00', '17:30:00', 170);
+
+
 -- Insert data into Employee table
+INSERT INTO Employee (Name, Role, HireDate, Status) VALUES 
+('John Doe', 'Train Driver', '2015-06-20', 'Active'), 
+('Jane Smith', 'Conductor', '2017-03-15', 'Active'), 
+('Alice Johnson', 'Station Manager', '2016-05-10', 'Active'), 
+('Bob Brown', 'Engineer', '2018-08-25', 'Active'), 
+('Charlie Davis', 'Ticketing Officer', '2019-01-30', 'Active'), 
+('Eve Wilson', 'Train Driver', '2020-04-10', 'Active'), 
+('Liam Lee', 'Conductor', '2021-11-05', 'Active'), 
+('Sophia King', 'Engineer', '2022-02-15', 'Active'), 
+('Mason Clark', 'Station Attendant', '2020-07-25', 'Active'), 
+('Olivia Adams', 'Customer Service Representative', '2021-06-20', 'Active');
+
+
+
 -- Insert data into CrewAssignment table
+('T01', 'E001', 'Train Driver'), 
+('T01', 'E002', 'Conductor'), 
+('T03', 'E001', 'Train Driver'), 
+('T03', 'E002', 'Conductor'), 
+('T04', 'E001', 'Train Driver'), 
+('T04', 'E002', 'Conductor'), 
+('T05', 'E001', 'Train Driver'), 
+('T05', 'E002', 'Conductor'), 
+('T06', 'E006', 'Train Driver'), 
+('T06', 'E007', 'Conductor');
+
 -- Insert data into Passenger table
+INSERT INTO Passenger (Name) VALUES 
+('Emily Davis'), 
+('Michael Thompson'), 
+('Sarah Lee'), 
+('James Wilson'), 
+('David Clark'),
+('Isabella Turner'), 
+('Liam Harris'), 
+('Olivia Martinez'), 
+('Lucas Robinson'), 
+('Mia White');
+
 -- Insert data into Ticket table
+INSERT INTO Ticket (PassengerID, TripID) VALUES 
+('P001', 'T01'), 
+('P002', 'T03'), 
+('P003', 'T05'), 
+('P004', 'T04'), 
+('P005', 'T06'), 
+('P006', 'T08'), 
+('P007', 'T02'), 
+('P008', 'T07'), 
+('P009', 'T09'), 
+('P010', 'T01');
 
 --------------------------------------------------------------------------------------------------------------------
 
 -- Create 2 simple queries
 -- Create 3 intermediate queries
 -- Create 3 advanced queries
+
