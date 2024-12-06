@@ -134,7 +134,7 @@ INSERT INTO Station (Name, Country, City, Type) VALUES
 ('Madrid', 'Spain', 'Madrid', 'End');
 
 -- Insert data into Route tableS
-INSERT INTO Route (StartStation, EndStation, Distance, JourneyTime, Status) VALUES ('London', 'Paris', 450, 5, 'Operational'), 
+INSERT INTO Route (StartStationID, EndStationID, Distance, JourneyTime, Status) VALUES ('London', 'Paris', 450, 5, 'Operational'), 
 ('London', 'Brussels', 320, 3.5, 'Operational'), 
 ('Paris', 'Brussels', 300, 3, 'Operational'), 
 ('Brussels', 'Amsterdam', 200, 2.5, 'Operational'), 
