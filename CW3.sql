@@ -236,7 +236,7 @@ JOIN Trip t ON ti.TripID = t.TripID
 JOIN Passenger p ON ti.PassengerID = p.PassengerID
 WHERE t.RouteID = 1; 
 
---LIST ALL CREW ASSIGNMENTS FOR LONDON, AND EMPLOYEE NAMES AND THEIR ROLES
+--LIST ALL CREW ASSIGNMENTS FOR ROUTEID 1, AND EMPLOYEE NAMES AND THEIR ROLES
 SELECT ca.TripID, e.Name AS EmployeeName, ca.Role
 FROM CrewAssignment ca
 JOIN Employee e ON ca.EmployeeID = e.EmployeeID
