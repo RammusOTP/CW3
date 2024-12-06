@@ -1,7 +1,7 @@
 /*
 Scott Damoo - 230088627 - ec23076@qmul.ac.uk
-Nefertiti Gansallo - 
-Maximo Hardaker - 
+Nefertiti Gansallo - 230324248 - ec23256@qmul.ac.uk
+Maximo Hardaker - 230523552 - ec23339@qmul.ac.uk
 Emmanuel Phillips - 230355585 - ec23279@qmul.ac.uk
 
 Scenario chosen: Eurostar2030
@@ -198,17 +198,27 @@ INSERT INTO Passenger (Name) VALUES
 ('Mia White');
 
 -- Insert data into Ticket table
-INSERT INTO Ticket (PassengerID, TripID) VALUES 
-('001', '01'), 
-('002', '03'), 
-('003', '05'), 
-('004', '04'), 
-('005', '06'), 
-('006', '08'), 
-('007', '02'), 
-('008', '07'), 
-('009', '09'), 
-('010', '01');
+INSERT INTO Ticket (PassengerID, TripID, TicketType, Price) VALUES
+(1, 1, 'Standard', 45.50),
+(2, 1, 'First Class', 75.00),
+(3, 2, 'Discounted', 35.00),
+(4, 2, 'Standard', 45.50),
+(5, 3, 'First Class', 80.00),
+(6, 3, 'Standard', 50.00),
+(7, 4, 'Discounted', 30.00),
+(8, 4, 'Standard', 40.00),
+(9, 5, 'First Class', 90.00),
+(10, 5, 'Standard', 60.00),
+(1, 6, 'Discounted', 25.00),
+(2, 6, 'Standard', 40.50),
+(3, 7, 'First Class', 85.00),
+(4, 7, 'Standard', 55.00),
+(5, 8, 'Discounted', 20.00),
+(6, 8, 'Standard', 35.00),
+(7, 9, 'First Class', 95.00),
+(8, 9, 'Standard', 65.00),
+(9, 1, 'Discounted', 30.00),
+(10, 2, 'Standard', 45.50);
 
 --------------------------------------------------------------------------------------------------------------------
 
