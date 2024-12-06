@@ -134,28 +134,29 @@ INSERT INTO Station (Name, Country, City, Type) VALUES
 ('Madrid', 'Spain', 'Madrid', 'End');
 
 -- Insert data into Route tableS
-INSERT INTO Route (StartStationID, EndStationID, Distance, JourneyTime, Status) VALUES ('London', 'Paris', 450, 5, 'Operational'), 
-('London', 'Brussels', 320, 3.5, 'Operational'), 
-('Paris', 'Brussels', 300, 3, 'Operational'), 
-('Brussels', 'Amsterdam', 200, 2.5, 'Operational'), 
-('Amsterdam', 'Cologne', 220, 3, 'Operational'), 
-('Cologne', 'Berlin', 300, 4, 'Operational'), 
-('Berlin', 'Geneva', 700, 8, 'Operational'), 
-('Zurich', 'Geneva', 280, 2.5, 'Operational'), 
-('Paris', 'Zurich', 550, 6, 'Operational'), 
-('London', 'Zurich', 700, 7, 'Operational');
+INSERT INTO Route (StartStationID, EndStationID, Distance, JourneyTime, Status) VALUES
+(1, 2, 450, '05:00:00', 'Operational'), 
+(1, 3, 320, '03:30:00', 'Operational'), 
+(2, 3, 300, '03:00:00', 'Operational'), 
+(3, 4, 200, '02:30:00', 'Operational'), 
+(4, 5, 220, '03:00:00', 'Operational'), 
+(5, 6, 300, '04:00:00', 'Operational'), 
+(6, 7, 700, '08:00:00', 'Operational'), 
+(8, 7, 280, '02:30:00', 'Operational'), 
+(2, 8, 550, '06:00:00', 'Operational'), 
+(1, 8, 700, '07:00:00', 'Operational');
 
 -- Insert data into Trip table
-INSERT INTO Trip (Date, DepartureTime, ArrivalTime, PassengerCount) VALUES ('2024-12-06', '08:00:00', '13:00:00', 150), 
-('2024-12-06', '09:00:00', '12:30:00', 120), 
-('2024-12-06', '10:00:00', '13:00:00', 200), 
-('2024-12-06', '07:30:00', '10:00:00', 80), 
-('2024-12-06', '11:00:00', '17:00:00', 250), 
-('2024-12-06', '12:00:00', '16:00:00', 100), 
-('2024-12-06', '13:00:00', '21:00:00', 180), 
-('2024-12-06', '14:00:00', '16:30:00', 90), 
-('2024-12-06', '15:00:00', '17:30:00', 170);
-
+INSERT INTO Trip (TrainID, RouteID, Date, DepartureTime, ArrivalTime, PassengerCount) VALUES
+(1, 1, '2024-12-06', '08:00:00', '13:00:00', 150),
+(2, 2, '2024-12-06', '09:00:00', '12:30:00', 120),
+(3, 3, '2024-12-06', '10:00:00', '13:00:00', 200),
+(4, 4, '2024-12-06', '07:30:00', '10:00:00', 80),
+(5, 5, '2024-12-06', '11:00:00', '17:00:00', 250),
+(6, 6, '2024-12-06', '12:00:00', '16:00:00', 100),
+(7, 7, '2024-12-06', '13:00:00', '21:00:00', 180),
+(8, 8, '2024-12-06', '14:00:00', '16:30:00', 90),
+(9, 9, '2024-12-06', '15:00:00', '17:30:00', 170);
 
 -- Insert data into Employee table
 INSERT INTO Employee (Name, Role, HireDate, Status) VALUES 
@@ -174,29 +175,29 @@ INSERT INTO Employee (Name, Role, HireDate, Status) VALUES
 
 -- Insert data into CrewAssignment table
 INSERT INTO CrewAssignment (TripID, EmployeeID, Role) VALUES
-('01', '001', 'Train Driver'), 
-('01', '002', 'Conductor'), 
-('03', '001', 'Train Driver'), 
-('03', '002', 'Conductor'), 
-('04', '001', 'Train Driver'), 
-('04', '002', 'Conductor'), 
-('05', '001', 'Train Driver'), 
-('05', '002', 'Conductor'), 
-('06', '006', 'Train Driver'), 
-('06', '007', 'Conductor');
+(1, 1, 'Train Driver'), 
+(1, 2, 'Conductor'), 
+(2, 1, 'Train Driver'), 
+(2, 2, 'Conductor'), 
+(3, 1, 'Train Driver'), 
+(3, 2, 'Conductor'), 
+(4, 6, 'Train Driver'), 
+(4, 7, 'Conductor'), 
+(5, 6, 'Train Driver'), 
+(5, 7, 'Conductor');
 
 -- Insert data into Passenger table
-INSERT INTO Passenger (Name) VALUES 
-('Emily Davis'), 
-('Michael Thompson'), 
-('Sarah Lee'), 
-('James Wilson'), 
-('David Clark'),
-('Isabella Turner'), 
-('Liam Harris'), 
-('Olivia Martinez'), 
-('Lucas Robinson'), 
-('Mia White');
+INSERT INTO Passenger (Name, PassengerType) VALUES
+('Emily Davis', 'Adult'), 
+('Michael Thompson', 'Senior'), 
+('Sarah Lee', 'Student'), 
+('James Wilson', 'Adult'), 
+('David Clark', 'Child'),
+('Isabella Turner', 'Adult'), 
+('Liam Harris', 'Senior'), 
+('Olivia Martinez', 'Student'), 
+('Lucas Robinson', 'Adult'), 
+('Mia White', 'Child');
 
 -- Insert data into Ticket table
 INSERT INTO Ticket (PassengerID, TripID, TicketType, Price) VALUES
@@ -217,9 +218,7 @@ INSERT INTO Ticket (PassengerID, TripID, TicketType, Price) VALUES
 (5, 8, 'Discounted', 20.00),
 (6, 8, 'Standard', 35.00),
 (7, 9, 'First Class', 95.00),
-(8, 9, 'Standard', 65.00),
-(9, 1, 'Discounted', 30.00),
-(10, 2, 'Standard', 45.50);
+(8, 9, 'Standard', 65.00);
 
 --------------------------------------------------------------------------------------------------------------------
 
