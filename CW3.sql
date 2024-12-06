@@ -173,6 +173,7 @@ INSERT INTO Employee (Name, Role, HireDate, Status) VALUES
 
 
 -- Insert data into CrewAssignment table
+INSERT INTO CrewAssignment (TripID, EmployeeID, Role) VALUES
 ('T01', 'E001', 'Train Driver'), 
 ('T01', 'E002', 'Conductor'), 
 ('T03', 'E001', 'Train Driver'), 
