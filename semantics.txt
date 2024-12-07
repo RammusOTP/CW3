@@ -17,13 +17,11 @@ Route-Trip
 -> Explanation: Each route can be assigned to multiple trips, and each trip can be made multiple times
 -> Implementation: FK Trip(RouteID) references PK Route(RouteID)
 
-Station-IntermediateStop-Route
--> Relationship: Stations must be part of routes, there are intermediate stops on the way
+Station-Route
+-> Relationship: Stations must be part of routes
 -> Cardinality: N : M
 -> Explanation: A station can be on many routes, and a route can contain multiple stations
--> Implementation: FK IntermediateStop(StationID) references Station(StationID)
-                   AND
-                   FK IntermediateStop(RouteID) references Route(RouteID)
+-> Implementation: FK Route(StartStationID) references Station(StationID)
 
 Employee-CrewAssignment
 -> Relationship: Employees must be assigned to crews
