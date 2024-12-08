@@ -42,12 +42,3 @@ Passenger-Ticket
 -> Implementation: FK Ticket(PassengerID) references Passenger(PassengerID)
 
 
-----------------------------------------
-Use this for default format of semantics
-
-Relationship
--> Relationship:
--> Cardinality:
--> Explanation:
--> Implementation:
-
