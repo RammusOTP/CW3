@@ -247,7 +247,7 @@ WHERE ca.TripID = 1;
 --FIND THE AVERAGE DISTANCE AND JOURNEY TIME FOR ALL TRAIN ROUTES STARTING IN LONDON
 SELECT 
     AVG(Distance) AS AverageDistance, 
-    AVG(TIME_TO_SEC(JourneyTime) / 60) AS AverageJourneyTime -- Convert TIME to minutes
+    AVG(TIME_TO_SEC(JourneyTime) / 60) AS AverageJourneyTime
 FROM Route r
 JOIN Station s ON r.StartStationID = s.StationID
 WHERE s.Name = 'London';
