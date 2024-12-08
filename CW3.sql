@@ -242,11 +242,12 @@ FROM CrewAssignment ca
 JOIN Employee e ON ca.EmployeeID = e.EmployeeID
 WHERE ca.TripID = 1;  
 
-
 -------------------- THREE ADVANCED QUERIES --------------------
 
 --FIND THE AVERAGE DISTANCE AND JOURNEY TIME FOR ALL TRAIN ROUTES STARTING IN LONDON
-SELECT AVG(Distance) AS AverageDistance, AVG(TIMESTAMPDIFF(MINUTE, '00:00:00', JourneyTime)) AS AverageJourneyTime
+SELECT 
+    AVG(Distance) AS AverageDistance, 
+    AVG(TIME_TO_SEC(JourneyTime) / 60) AS AverageJourneyTime -- Convert TIME to minutes
 FROM Route r
 JOIN Station s ON r.StartStationID = s.StationID
 WHERE s.Name = 'London';
@@ -256,7 +257,6 @@ SELECT t.TripID, SUM(ti.Price) AS TotalRevenue
 FROM Ticket ti
 JOIN Trip t ON ti.TripID = t.TripID
 GROUP BY t.TripID;
-
 
 --FIND THE MOST POPULAR TRAIN TYPE USING PASSENGER COUNT
 SELECT tr.Type, SUM(t.PassengerCount) AS TotalPassengers
